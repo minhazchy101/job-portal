@@ -3,8 +3,12 @@ import { AuthContext } from '../../../context/AuthProvider'
 import Lottie from 'lottie-react'
 import animationData from '../../../assets/animation/Secure Login.json'
 import GoogleAuth from '../GoogleAuth'
+import { useLocation, useNavigate } from 'react-router'
 const Login = () => {
      const {signIn} = use(AuthContext)
+     const {state} = useLocation()
+     const path = state || "/";
+     const navigate = useNavigate()
         const handleLogin =(e)=>{
             e.preventDefault()
             const form = e.target;
@@ -14,6 +18,7 @@ const Login = () => {
             .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
+        navigate(path);
         console.log(user)
       })
       .catch((error) => {
@@ -48,7 +53,7 @@ const Login = () => {
           <button className="btn btn-neutral mt-4">Login</button>
         </fieldset>
           </form>
-          <GoogleAuth/>
+          <GoogleAuth path={path} navigate={navigate}/>
       </div>
     </div>
   </div>

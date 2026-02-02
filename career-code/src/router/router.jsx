@@ -3,6 +3,8 @@ import RootLayout from "../Layouts/RootLayout";
 import Home from "../pages/Home/Home";
 import Register from "../pages/Auth/register/Register";
 import Login from "../pages/Auth/Login/Login";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ApplyJob from "../pages/JOB/ApplyJob";
 
 
 export const router = createBrowserRouter([
@@ -18,6 +20,9 @@ export const router = createBrowserRouter([
         },
         {path : "/login",
           Component :Login,
+        },
+        {path : "/applyJob/:id",
+         element: <PrivateRoute><ApplyJob/></PrivateRoute> ,
         },
     ]
   },

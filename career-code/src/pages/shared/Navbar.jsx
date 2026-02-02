@@ -1,12 +1,14 @@
 import React, { use } from 'react'
-import { NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthProvider';
 
 const Navbar = () => {
   const {user,logOut} = use(AuthContext)
+  const navigate = useNavigate()
   const handleLogout = () => {
      logOut()
     .then(() => {
+      navigate("/")
       console.log("Logged out");
     })
     .catch(console.error);
@@ -28,7 +30,7 @@ const Navbar = () => {
         {navItems}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">careerCode</a>
+    <Link to={"/"} className="btn btn-ghost text-xl">careerCode</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

@@ -1,14 +1,17 @@
 import React, { use } from 'react'
 import { AuthContext } from '../../context/AuthProvider'
 
-const GoogleAuth = () => {
+
+const GoogleAuth = ({path, navigate}) => {
     const {googleSignIn} = use(AuthContext)
+   
     const handleGoogle =()=>{
         googleSignIn()
         .then((res)=>{
             console.log(res)
             const user = res.user;
             console.log(user)
+            navigate(path)
         }).catch((error) => {
     
     const errorMessage = error.message;
