@@ -4,7 +4,7 @@ import bannerTwo from "../../assets/images/download (5).jpeg"
 import { motion } from "motion/react"
 const Banner = () => {
   return (
-    <div className="hero bg-base-200 min-h-[85vh]">
+    <div className="hero bg-base-200 min-h-[85vh] my-10">
 
   <div className="hero-content flex-col lg:flex-row">
     {/* photo */}

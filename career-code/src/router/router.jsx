@@ -7,6 +7,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ApplyJob from "../pages/JOB/ApplyJob";
 
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
         {path : "/register",
           Component :Register,
         },
+       
         {path : "/login",
           Component :Login,
         },

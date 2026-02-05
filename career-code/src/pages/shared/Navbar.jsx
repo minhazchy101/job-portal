@@ -16,6 +16,7 @@ const Navbar = () => {
 
   const navItems = <>
    <li><NavLink to={"/"}>Home</NavLink></li>
+  
   </>
   return (
    <div className="navbar bg-base-100 shadow-sm">
